@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Microfrontends</title>
+  <meta name="importmap-type" use-injector />
+  <script type="injector-importmap" src="https://react.microfrontends.app/importmap.json"></script>
+  <% if (isLocal) { %>
+    <script type="injector-importmap">
+    {
+      "imports": {
+        "@react-mf/root-config": "//localhost:9000/react-mf-root-config.js",
+        "@react-mf/login": "//localhost:8080/react-mf-login.js"
+      }
+    }
+  </script>
+    <% } %>
+      <template id="single-spa-layout">
+        <single-spa-router>
+          <div class="main-content">
+            <route default>
+              <application name="@react-mf/login"></application>
+            </route>
+          </div>
+        </single-spa-router>
+      </template>
+</head>
+
+<body>
+  <script
+    src="https://storage.googleapis.com/react.microfrontends.app/deps/npm:import-map-overrides@4.2.0/dist/import-map-overrides.js"></script>
+  <script
+    src="https://storage.googleapis.com/react.microfrontends.app/deps/npm:@single-spa/import-map-injector@2.0.0/lib/import-map-injector.js"></script>
+  <script>
+    window.importMapInjector.initPromise.then(() => {
+      import('@react-mf/root-config');
+      import('@react-mf/styleguide');
+    });
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+
+</html>
