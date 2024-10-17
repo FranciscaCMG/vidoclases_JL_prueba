@@ -20,11 +20,5 @@ public interface UserRepository extends JpaRepository<UserEntity, String> {
     UserEntity findByID(
             @Param("ID")int ID);
 
-    @Query("select e.ID from UserEntity e where e.correo = :correo")
-    Integer findIDByCorreo(@Param("correo") String correo);
-
-
-
-
 
 }

@@ -28,9 +28,7 @@ public class UserService {
     public UserEntity findByID(int ID){
         return userRepository.findByID(ID);
     }
-    public int findIDByCorreo(String correo){
-        return userRepository.findIDByCorreo(correo);
-    }
+
 
     public void guardarUser(UserEntity user){
         userRepository.save(user);

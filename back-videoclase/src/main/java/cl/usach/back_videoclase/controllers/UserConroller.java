@@ -43,14 +43,6 @@ public class UserConroller {
         return ResponseEntity.ok(userID);
     }
 
-    @GetMapping("/id/correo/{correo}")
-    public ResponseEntity<Integer> obtenerIdPorCorreo(@PathVariable String correo){
-        Integer ID = userService.findIDByCorreo(correo);
-        if (ID == null)
-            return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(ID);
-    }
-
     @PostMapping
     public void guardarUser(@RequestBody UserEntity user){
         userService.guardarUser(user);

@@ -7,9 +7,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -30,11 +28,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(customRequest -> {
                     customRequest
                             .requestMatchers(HttpMethod.GET, "/user/*").hasRole("ADMIN")
+                            .requestMatchers(HttpMethod.GET, "/user").hasRole("ADMIN")
                             .requestMatchers(HttpMethod.DELETE, "/user/*").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.POST, "/user/*").hasAnyRole("ADMIN", "CUSTOMER")
+                            .requestMatchers(HttpMethod.POST, "/user").hasAnyRole("ADMIN", "CUSTOMER")
                             .requestMatchers(HttpMethod.PATCH, "/user/*").hasAnyRole("ADMIN", "CUSTOMER")
                             .requestMatchers(HttpMethod.PUT).denyAll()
                             .anyRequest().authenticated();
+                    // Para permisos especiales tengo que Aplicar authorities a los usuarios
                 })
                 //desactivando la protección CSRF (Cross-Site Request Forgery)
                 // es una característica de seguridad que ayuda a prevenir ciertos tipos de ataques, pero en algunos casos, puedes querer desactivarla
@@ -48,23 +48,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // Creacion de Usuarios diferentes con diferentes roles
-    @Bean
-    public UserDetailsService memoryUsers(){
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password(passwordEncoder().encode("admin"))
-                .roles("ADMIN")
-                .build();
-
-        UserDetails customer = User.builder()
-                .username("customer")
-                .password(passwordEncoder().encode("customer123"))
-                .roles("CUSTOMER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, customer);
-    }
 
     @Bean
     public PasswordEncoder passwordEncoder(){
