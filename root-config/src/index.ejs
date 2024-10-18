@@ -18,6 +18,15 @@
     }
   </script>
     <% } %>
+    <style>
+      /* Establecer el color de fondo para toda la página y el color de texto */
+      body {
+        background-color: white !important; /* Fondo blanco */
+        color: black !important; /* Texto negro */
+        margin: 0 !important; /* Eliminar márgenes predeterminados del navegador */
+        font-family: Arial, sans-serif !important; /* Fuente opcional */
+      }
+    </style>
       <template id="single-spa-layout">
         <single-spa-router>
           <div class="main-content">
@@ -37,7 +46,7 @@
   <script>
     window.importMapInjector.initPromise.then(() => {
       import('@react-mf/root-config');
-      import('@react-mf/styleguide');
+
     });
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>

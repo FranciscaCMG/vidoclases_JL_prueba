@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Formulario } from './Formulario';
+import {Home} from './Home'
 import 'regenerator-runtime/runtime';
 
 const Singin = () => {
@@ -31,6 +32,8 @@ const Singin = () => {
 
   return (
     <div>
+      <Formulario/>
+      <Home/>
       {error && <div>Error: {error}</div>}
       <div>Users: {JSON.stringify(users)}</div>
     </div>
