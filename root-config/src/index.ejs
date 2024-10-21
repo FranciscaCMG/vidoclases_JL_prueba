@@ -13,7 +13,9 @@
     {
       "imports": {
         "@react-mf/root-config": "//localhost:9000/react-mf-root-config.js",
-        "@react-mf/login": "//localhost:8080/react-mf-login.js"
+        "@react-mf/login": "//localhost:8082/react-mf-login.js",
+        "@react-mf/navbar": "//localhost:8080/react-mf-navbar.js",
+        "@react-mf/home": "//localhost:8081/react-mf-home.js"
       }
     }
   </script>
@@ -33,10 +35,12 @@
             <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
           </nav>
           <div class="main-content">
+            <route path="home">
+              <application name="@react-mf/home"></application>
+            </route>
             <route default>
               <application name="@react-mf/login"></application>
             </route>
-
           </div>
         </single-spa-router>
       </template>
