@@ -33,6 +33,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "single-spa": "^5.9.3",
     "single-spa-layout": "^1.6.0"
   },

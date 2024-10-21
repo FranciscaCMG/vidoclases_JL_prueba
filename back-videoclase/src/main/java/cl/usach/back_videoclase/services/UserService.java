@@ -21,6 +21,16 @@ public class UserService {
         return (ArrayList<UserEntity>) userRepository.findAll();
     }
 
+    public UserEntity findByUser(String usuario){
+        return userRepository.findByUsername(usuario);
+    }
+
+    public boolean existeUser(String username) {
+
+        UserEntity user = userRepository.findByUsername(username);
+        return user != null;
+    }
+
     public UserEntity findByCorreo(String correo){
         return userRepository.findByCorreo(correo);
     }
@@ -43,7 +53,8 @@ public class UserService {
         user.setCorreo(correo);
         userRepository.save(user);
         return user;
-
     }
+
+
 
 }

@@ -27,6 +27,13 @@ public class UserConroller {
         return ResponseEntity.ok(users);
     }
 
+    @GetMapping("/usuario/{usuario}")
+    public Boolean existeUser(@PathVariable String usuario) {
+
+        return userService.existeUser(usuario);
+    }
+
+
     @GetMapping("/correo/{correo}")
     public ResponseEntity<UserEntity> obtenerUserPorCorreo(@PathVariable String correo){
         UserEntity userCorreo = userService.findByCorreo(correo);
