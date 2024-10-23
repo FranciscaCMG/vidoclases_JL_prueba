@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Formulario } from './Formulario';
-import {Home} from './Home'
-import { UseState } from 'react';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Formulario } from "./Formulario";
+import { UseState } from "react";
 
-import 'regenerator-runtime/runtime';
+import "regenerator-runtime/runtime";
 
 const Singin = () => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState([]);
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const username = 'admin';
-        const password = 'admin';
+        const username = "admin";
+        const password = "admin";
         const token = btoa(`${username}:${password}`);
 
-        const response = await axios.get('http://localhost:8090/user', {
+        const response = await axios.get("http://localhost:8090/user", {
           headers: {
-            'Authorization': `Basic ${token}`,
+            Authorization: `Basic ${token}`,
           },
         });
 
@@ -36,8 +34,8 @@ const Singin = () => {
 
   return (
     <div>
-      <Formulario setUser={setUser}/>
-      
+      <Formulario setUser={setUser} />
+
       {error && <div>Error: {error}</div>}
       <div>Users: {JSON.stringify(users)}</div>
     </div>
@@ -45,4 +43,3 @@ const Singin = () => {
 };
 
 export default Singin;
-

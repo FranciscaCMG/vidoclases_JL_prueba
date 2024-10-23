@@ -1,0 +1,223 @@
+:root {
+  --color-primary: #011627;
+  --color-secondary: white;
+  --color-danger: #e71d36;
+  --color-warning: #ff9f1c;
+  --color-info: #2ec4b6;
+  --color-background: white;
+  --color-white: #fdfffc;
+  --color-black: #171817;
+  --color-overlay: white;
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* El body ocupa toda la altura de la ventana */
+  margin: 0;
+  background-color: var(--color-background); /* Fondo gris claro */
+  background-image: url(fondo.png);
+}
+
+nav.topnav {
+  position: fixed;
+  width: 100vw;
+  top: 0px;
+  z-index: 100;
+}
+
+.formulario {
+  display: flex;
+  gap: 15px;
+
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-color: #00a499;
+  margin: 0 auto;
+}
+
+.login {
+  background-color: white; /* Color de fondo del contenedor */
+  padding: 15px;
+  border: 2px solid white;
+  border-radius: 9px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "DM Sans", sans-serif;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.h1-form {
+  text-align: left;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  color: var(--color-primary);
+  margin: 0%;
+  padding-left: 25px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.h1-home {
+  text-align: center;
+  font-size: 60px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0%;
+  padding-left: 25px;
+}
+
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.p-home {
+  text-align: center;
+  font-size: 24px;
+  color: var(--color-primary);
+  font-family: "DM Sans", sans-serif;
+}
+
+.p-home span {
+  display: block; /* Hace que cada línea se muestre en una nueva línea */
+  margin: 0; /* Espaciado entre líneas */
+}
+
+.p-form {
+  text-align: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-size: 16px;
+  line-height: normal;
+}
+
+.p-form-link {
+  padding-right: 50px;
+}
+
+.link-register {
+  color: blue;
+  text-decoration: underline;
+}
+
+.input-form {
+  border: 0.5px solid #ccc;
+  width: 315px;
+  height: 45px;
+  border-radius: 3px;
+}
+
+input {
+  border: 0.5px solid #ccc; /* Esto también asegura que todos los inputs tengan borde negro */
+  width: 19.5vw; /* Porcentaje del ancho de la ventana (puedes ajustar según lo que necesites) */
+  height: 2.8vw;
+  border-radius: 3px;
+}
+
+input:focus {
+  border: 2px solid #ccc; /* Borde anaranjado cuando está enfocado */
+  outline: none; /* Elimina el borde predeterminado del navegador */ /* Elimina el borde predeterminado del navegador */
+  box-shadow: 0 0 10px #555; /* Sombra difusa anaranjada */
+}
+
+input::placeholder {
+  color: #999; /* Color gris para el texto del placeholder */
+  font-family: "DM Sans", sans-serif;
+  /* Reducir ligeramente el tamaño de la fuente */
+  font-size: 1.1vw;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+button {
+  border: 2px solid #ec971f; /* Borde anaranjado */
+  width: 265px;
+  height: 45px; /* Altura proporcional */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #ec971f; /* Fondo del botón de color anaranjado */
+  font-family: "DM Sans", sans-serif; /* Tipo de letra */
+  color: white; /* Color del texto del botón en blanco */
+  font-size: 1.3vw;
+  margin: 0.5rem 0;
+}
+
+.btn-home {
+  background-color: #ec971f;
+  color: black;
+  border-radius: 100px;
+  font-family: DM Sans, sans-serif;
+  font-size: 16px;
+}
+
+.container-home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-color: #00a499;
+  margin: 0 auto;
+  width: 80%; /* Cambia este valor según lo que necesites */
+  max-width: 1200px;
+  grid-row-gap: 24px;
+}
+
+.p-6 {
+  padding: 1.5rem;
+  font-size: 16px;
+  font-family: DM Sans, sans-serif;
+  color: black;
+}
+
+.nombre-proyecto {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 50px;
+  font-size: 40px;
+  color: #fe7e1e;
+}
+
+.nav-btn {
+  border: 2px solid #fe984b;
+  background-color: #fff2d2;
+  border-radius: 100px;
+  margin-left: 20px;
+  margin-right: 100px;
+  padding: 12px 24px;
+  transition: background-color 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  color: black;
+  font-family: DM Sans, sans-serif;
+}
+
+.nav-btn:hover {
+  background-color: #febe1e; /* Color al pasar el ratón */
+  border: 3px solid #fe984b;
+}
+
+.titulo {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  margin-left: 50px;
+}

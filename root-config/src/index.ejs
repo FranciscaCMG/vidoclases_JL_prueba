@@ -8,40 +8,56 @@
   <title>React Microfrontends</title>
   <meta name="importmap-type" use-injector />
   <script type="injector-importmap" src="https://react.microfrontends.app/importmap.json"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lilita+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
   <% if (isLocal) { %>
     <script type="injector-importmap">
     {
       "imports": {
         "@react-mf/root-config": "//localhost:9000/react-mf-root-config.js",
-        "@react-mf/login": "//localhost:8082/react-mf-login.js",
         "@react-mf/navbar": "//localhost:8080/react-mf-navbar.js",
-        "@react-mf/home": "//localhost:8081/react-mf-home.js"
+        "@react-mf/home": "//localhost:8081/react-mf-home.js",
+        "@react-mf/login": "//localhost:8082/react-mf-login.js",
+        "@react-mf/styleguide": "//localhost:8083/react-mf-styleguide.js"
+        
       }
     }
   </script>
     <% } %>
-    <style>
-      /* Establecer el color de fondo para toda la página y el color de texto */
-      body {
-        background-color: #00a499!important; /* Fondo blanco */
-        color: black !important; /* Texto negro */
-        margin: 0 !important; /* Eliminar márgenes predeterminados del navegador */
-        font-family: Arial, sans-serif !important; /* Fuente opcional */
-      }
-    </style>
+      <style>
+        /* Establecer el color de fondo para toda la página y el color de texto */
+        body {
+
+          margin: 0 !important;
+          /* Eliminar márgenes predeterminados del navegador */
+          font-family: Arial, sans-serif !important;
+          /* Fuente opcional */
+        }
+      </style>
       <template id="single-spa-layout">
         <single-spa-router>
-          <nav class="topnav">
-            <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
-          </nav>
-          <div class="main-content">
-            <route path="home">
-              <application name="@react-mf/home"></application>
-            </route>
-            <route default>
+          <!-- Condicional para mostrar el navbar solo si no estás en la ruta de 'singin' -->
+          <route path="singin" class="body-login">
+            <div class="main-content">
               <application name="@react-mf/login"></application>
-            </route>
-          </div>
+            </div>
+          </route>
+
+          <route default>
+            <nav class="topnav">
+              <application name="@react-mf/navbar" loader="topNav" error="topNav"></application>
+            </nav>
+            <div class="main-content">
+              <application name="@react-mf/home"></application>
+            </div>
+          </route>
         </single-spa-router>
       </template>
 </head>
@@ -52,8 +68,10 @@
   <script
     src="https://storage.googleapis.com/react.microfrontends.app/deps/npm:@single-spa/import-map-injector@2.0.0/lib/import-map-injector.js"></script>
   <script>
+
     window.importMapInjector.initPromise.then(() => {
       import('@react-mf/root-config');
+      import('@react-mf/styleguide');
 
     });
   </script>
