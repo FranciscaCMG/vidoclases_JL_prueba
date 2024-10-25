@@ -25,7 +25,8 @@
         "@react-mf/navbar": "//localhost:8080/react-mf-navbar.js",
         "@react-mf/home": "//localhost:8081/react-mf-home.js",
         "@react-mf/login": "//localhost:8082/react-mf-login.js",
-        "@react-mf/styleguide": "//localhost:8083/react-mf-styleguide.js"
+        "@react-mf/register": "//localhost:8083/react-mf-register.js",
+        "@react-mf/styleguide": "//localhost:8084/react-mf-styleguide.js"
         
       }
     }
@@ -44,9 +45,10 @@
       <template id="single-spa-layout">
         <single-spa-router>
           <!-- Condicional para mostrar el navbar solo si no estás en la ruta de 'singin' -->
-          <route path="singin" class="body-login">
+          <route path="registro" class="body-login">
+
             <div class="main-content">
-              <application name="@react-mf/login"></application>
+              <application name="@react-mf/register"></application>
             </div>
           </route>
 
@@ -58,6 +60,13 @@
               <application name="@react-mf/home"></application>
             </div>
           </route>
+
+          <route path="singin">
+
+            <application name="@react-mf/login"></application>
+          </route>
+
+          
         </single-spa-router>
       </template>
 </head>

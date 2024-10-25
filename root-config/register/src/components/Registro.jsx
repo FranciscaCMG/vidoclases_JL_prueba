@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { Formulario } from "./Formulario.jsx";
+import { FormularioRegistro } from "./FormularioRegistro.jsx";
 import { UseState } from "react";
 
 import "regenerator-runtime/runtime";
 
-const Singin = () => {
+const Registro = () => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState([]);
   const [error, setError] = useState(null);
@@ -35,11 +34,7 @@ const Singin = () => {
 
   return (
     <div>
-      <Link className="nombre-home " to="/Home">
-        Videoclases
-      </Link>
-
-      <Formulario setUser={setUser} />
+      <FormularioRegistro setUser={setUser} />
 
       {error && <div>Error: {error}</div>}
       <div>Users: {JSON.stringify(users)}</div>
@@ -47,4 +42,4 @@ const Singin = () => {
   );
 };
 
-export default Singin;
+export default Registro;

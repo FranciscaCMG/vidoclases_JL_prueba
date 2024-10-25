@@ -44,12 +44,18 @@ nav.topnav {
   margin: 0 auto;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
 .login {
   background-color: white; /* Color de fondo del contenedor */
   padding: 15px;
   border: 2px solid white;
   border-radius: 9px;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
@@ -67,7 +73,7 @@ h1 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: var(--color-primary);
   margin: 0%;
-  padding-left: 25px;
+  padding-left: 0px;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -105,7 +111,7 @@ p {
   text-align: left;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 25px;
+  padding-left: 0px;
   font-size: 1rem;
   color: var(--color-primary);
   font-size: 16px;
@@ -114,6 +120,7 @@ p {
 
 .p-form-link {
   padding-right: 50px;
+  text-align: left;
 }
 
 .link-register {
@@ -197,6 +204,16 @@ button {
   color: #fe7e1e;
 }
 
+.nombre-home {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 80px;
+
+  font-size: 40px;
+  color: #fe7e1e;
+}
+
 .nav-btn {
   border: 2px solid #fe984b;
   background-color: #fff2d2;
@@ -212,12 +229,4 @@ button {
 .nav-btn:hover {
   background-color: #febe1e; /* Color al pasar el ratón */
   border: 3px solid #fe984b;
-}
-
-.titulo {
-  font-family: "Chewy", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 36px;
-  margin-left: 50px;
 }

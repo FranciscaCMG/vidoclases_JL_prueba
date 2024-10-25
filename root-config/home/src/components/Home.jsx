@@ -15,7 +15,10 @@ export default function Home() {
       </p>
 
       <button className="btn-home">
-        <a href="./Singin" style={{ textDecoration: "none", color: "inherit" }}>
+        <a
+          href="./Registro"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           Regístrate
         </a>
       </button>

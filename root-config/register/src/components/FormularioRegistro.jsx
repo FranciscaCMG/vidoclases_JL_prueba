@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios"; // Asegúrate de importar axios
 
-export function Formulario({ setUser }) {
+export function FormularioRegistro({ setUser }) {
   const [username, setUsername] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [error, setError] = useState(false);
@@ -67,16 +67,53 @@ export function Formulario({ setUser }) {
 
   return (
     <section className="login">
-      <h1 className="h1-form">¡Hola!</h1>
-      <p className="p-form">Qué bueno tenerte de vuelta.</p>
+      <h1 className="h1-form">Gracias por querer ser parte</h1>
+      <p className="p-form">
+        Completa los siguientes datos para crear tu primera videoclase.
+      </p>
+      <p className="p-form-link">
+        ¿Ya tienes cuenta?{" "}
+        <a className="link-register" href="/singin">
+          Inicia sesión
+        </a>
+      </p>
+      <br></br>
+
       <form className="formulario" onSubmit={handleSubmit}>
-        <input
-          className="input-form"
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Usuario*"
-        />
+        <div className="form-group">
+          <input
+            className="input-form"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Usuario*"
+          />
+
+          <input
+            className="input-form"
+            type="password"
+            value={contrasena}
+            onChange={(e) => setContrasena(e.target.value)}
+            placeholder="Contraseña*"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            className="input-form"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Usuario*"
+          />
+          <input
+            className="input-form"
+            type="password"
+            value={contrasena}
+            onChange={(e) => setContrasena(e.target.value)}
+            placeholder="Contraseña*"
+          />
+        </div>
+
         <input
           className="input-form"
           type="password"
@@ -84,15 +121,10 @@ export function Formulario({ setUser }) {
           onChange={(e) => setContrasena(e.target.value)}
           placeholder="Contraseña*"
         />
+
         <button className="btn-form" type="submit">
-          Iniciar Sesión
+          Registrarse
         </button>
-        <p className="p-form-link">
-          ¿No tienes cuenta?{" "}
-          <a className="link-register" href="/registro">
-            Regístrate aquí
-          </a>
-        </p>
       </form>
 
       {error && (
