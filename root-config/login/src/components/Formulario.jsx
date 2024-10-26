@@ -5,6 +5,7 @@ export function Formulario({ setUser }) {
   const [username, setUsername] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [error, setError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async (e) => {
     console.log("1. entre");
@@ -12,8 +13,8 @@ export function Formulario({ setUser }) {
 
     // Cambié el operador | por ||
     if (!username || !contrasena) {
-      console.log("2. entre if");
       setError(true);
+      setSuccessMessage("");
       return;
     }
     console.log("3. no entre if");
@@ -53,15 +54,14 @@ export function Formulario({ setUser }) {
       if (response.data === true) {
         console.log("Usuario autenticado, redirigiendo...");
         // Usar window.location.replace() para evitar que el usuario regrese a la página de login
-        window.location.replace("/");
+        window.location.replace("/HomeVC");
         return;
       }
     } catch (error) {
-      // Si ocurre un error, mostrar el error
-      console.log("Error en la solicitud:", error);
       setError(
         error.response ? error.response.data : "Hubo un error en la solicitud"
       );
+      setSuccessMessage("");
     }
   };
 
@@ -97,6 +97,9 @@ export function Formulario({ setUser }) {
 
       {error && (
         <p style={{ color: "#e71d36" }}>Por favor ingresa ambos campos</p>
+      )}
+      {successMessage && (
+        <p style={{ color: "#28a745" }}>{successMessage}</p> // Mensaje de éxito
       )}
     </section>
   );

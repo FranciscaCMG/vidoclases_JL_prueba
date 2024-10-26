@@ -30,7 +30,9 @@ public class SecurityConfig {
                             .requestMatchers(HttpMethod.GET, "/user/*").hasRole("ADMIN")
                             .requestMatchers(HttpMethod.GET, "/user").hasRole("ADMIN")
                             .requestMatchers(HttpMethod.DELETE, "/user/*").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.POST, "/user").hasAnyRole("ADMIN", "CUSTOMER")
+                            .requestMatchers(HttpMethod.POST, "/user").permitAll()
+
+                            //.requestMatchers(HttpMethod.POST, "/user").hasAnyRole("ADMIN", "CUSTOMER")
                             .requestMatchers(HttpMethod.PATCH, "/user/*").hasAnyRole("ADMIN", "CUSTOMER")
                             .requestMatchers(HttpMethod.PUT).denyAll()
                             .anyRequest().authenticated();

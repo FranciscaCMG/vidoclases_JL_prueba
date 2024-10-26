@@ -42,7 +42,6 @@ const Singin = () => {
       <Formulario setUser={setUser} />
 
       {error && <div>Error: {error}</div>}
-      <div>Users: {JSON.stringify(users)}</div>
     </div>
   );
 };

@@ -214,6 +214,16 @@ button {
   color: #fe7e1e;
 }
 
+.nombre-home-register {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 250px;
+
+  font-size: 40px;
+  color: #fe7e1e;
+}
+
 .nav-btn {
   border: 2px solid #fe984b;
   background-color: #fff2d2;

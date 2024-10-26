@@ -26,8 +26,9 @@
         "@react-mf/home": "//localhost:8081/react-mf-home.js",
         "@react-mf/login": "//localhost:8082/react-mf-login.js",
         "@react-mf/register": "//localhost:8083/react-mf-register.js",
-        "@react-mf/styleguide": "//localhost:8084/react-mf-styleguide.js"
-        
+        "@react-mf/styleguide": "//localhost:8084/react-mf-styleguide.js",
+        "@react-mf/home-videoclase": "//localhost:8085/react-mf-home-videoclase.js",
+        "@react-mf/navbar-videoclase": "//localhost:8086/react-mf-navbar-videoclase.js"
       }
     }
   </script>
@@ -62,9 +63,17 @@
           </route>
 
           <route path="singin">
-
             <application name="@react-mf/login"></application>
           </route>
+
+          <route path="HomeVC">
+            <nav class="topnav">
+              <application name="@react-mf/navbar-videoclase" loader="topNav" error="topNav"></application>
+            </nav>
+
+            <application name="@react-mf/home-videoclase"></application>
+          </route>
+          
 
           
         </single-spa-router>
