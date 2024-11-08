@@ -6,13 +6,13 @@ export default function Root(props) {
   return (
     <BrowserRouter>
       <div
-        className="h-16 flex items-center justify-between  "
+        className="h-16 flex items-center justify-between"
         style={{ color: "white" }}
       >
-        <div className="flex items-center justify-between nombre-proyecto ">
+        <div className="flex items-center justify-between nombre-proyecto">
           <Link to="/">VIDEOCLASES</Link>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center ml-auto">
           {links.map((link) => {
             return (
               <Link key={link.href} className="p-6" to={link.href}>

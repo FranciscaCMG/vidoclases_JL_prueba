@@ -23,7 +23,7 @@ body {
   height: 100vh; /* El body ocupa toda la altura de la ventana */
   margin: 0;
   background-color: var(--color-background); /* Fondo gris claro */
-  background-image: url(fondo.png);
+  background-image: url(fondo.png) !important; /* Fondo de la imagen */
 }
 
 nav.topnav {
@@ -31,6 +31,14 @@ nav.topnav {
   width: 100vw;
   top: 0px;
   z-index: 100;
+}
+
+nav.topnav2 {
+  position: fixed;
+  width: 100vw;
+  top: 0px;
+  z-index: 100;
+  background-color: #febe1e;
 }
 
 .formulario {
@@ -86,6 +94,16 @@ h1 {
   font-weight: 600;
   color: var(--color-primary);
   margin: 0%;
+  padding-left: 25px;
+}
+
+.h1-home-presentacion {
+  text-align: center;
+  font-size: 40px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 2%;
   padding-left: 25px;
 }
 
@@ -183,7 +201,7 @@ button {
   align-items: center;
   border-color: #00a499;
   margin: 0 auto;
-  width: 80%; /* Cambia este valor según lo que necesites */
+  width: 80%;
   max-width: 1200px;
   grid-row-gap: 24px;
 }
@@ -197,6 +215,15 @@ button {
 
 .nombre-proyecto {
   font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 50px;
+  font-size: 40px;
+  color: #fe7e1e;
+}
+
+.nombre-proyecto-home {
+  font-family: DM Sans, sans-serif;
   font-weight: 400;
   font-style: normal;
   margin-left: 50px;
@@ -239,4 +266,296 @@ button {
 .nav-btn:hover {
   background-color: #febe1e; /* Color al pasar el ratón */
   border: 3px solid #fe984b;
+}
+
+.product-view__carousel img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.plantilla-view__grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(218, 220, 224);
+}
+
+.plantilla-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+
+  border-radius: 8px;
+
+  background-color: #fff;
+  width: 340px;
+  height: 180px;
+  margin: 10px;
+  text-align: center;
+}
+
+.plantilla-card__name {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.centrado {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/*
+    ** All elements border-box
+*/
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    ** Root element font size
+    ** No default margins and paddings
+*/
+html,
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+    **root elements display block
+*/
+html,
+body {
+  display: block;
+}
+
+/*
+    ** Body main style
+*/
+body {
+  line-height: 1.317101995;
+  scroll-behavior: smooth;
+}
+
+button:focus {
+  outline: 0;
+}
+
+img,
+embed,
+svg,
+audio,
+canvas,
+iframe,
+video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+h1,
+h1,
+h3,
+h4,
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color: #f4f4f5;
+  padding: 40px;
+  padding-top: 5%;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #3b3b53;
+  text-align: center;
+}
+
+/*
+    **Drag and Drop component
+*/
+
+.column2.column--2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre las diferentes secciones */
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-between; /* Se distribuyen las columnas equitativamente */
+  gap: 20px; /* Espacio entre las dos columnas */
+}
+
+.column {
+  flex: 1; /* Ocupa el mismo espacio */
+  background-color: #f0f0f0; /* Fondo para que se vea la columna */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.column {
+  display: flex;
+
+  flex-direction: column;
+  background-color: #f6f8fc;
+  width: 400px;
+  min-height: 100px;
+  padding: 24px 12px;
+  border-radius: 8px;
+  border-top: 7px solid;
+  box-shadow: 0 8px 16px rgba(#333, 0.1);
+}
+
+.dd-zone {
+  min-height: 200px; /* Altura mínima para arrastrar y soltar */
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  padding: 10px;
+}
+
+.dd-element {
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: move;
+}
+
+.title {
+  display: flex; /* Activamos flexbox en el contenedor */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  width: 100%;
+}
+
+.title input {
+  width: 100%; /* El input ocupará todo el ancho disponible */
+  border: none; /* Sin borde */
+  background-color: transparent; /* Fondo transparente */
+  font-weight: bold; /* Negrita */
+  font-size: 16px; /* Tamaño de la fuente */
+  text-align: center; /* Centrado del texto dentro del input */
+  padding: 8px 10px; /* Relleno del input para mejorar la apariencia */
+}
+
+.title input:focus {
+  outline: none;
+}
+
+.icon-react {
+  width: 60px;
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f8fc;
+  width: 800px;
+  min-height: 100px;
+  padding: 24px 12px;
+  border-radius: 8px;
+  border-top: 7px solid;
+  box-shadow: 0 8px 16px rgba(#333, 0.1);
+}
+
+.column--1 {
+  border-color: #ff9e4a;
+}
+
+.column--1 .title {
+  color: #ff9e4a;
+}
+
+.column--2 {
+  border-color: #c56be2;
+}
+
+.column--2 .title {
+  color: #c56be2;
+}
+
+.column--3 {
+  border-color: #6fd2af;
+}
+
+.column--3 .title {
+  color: #6fd2af;
+}
+
+/* DRAG AND DROP */
+.drag-and-drop {
+  display: flex;
+  grid-gap: 40px;
+}
+
+.dd-zone {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+  height: 100%;
+}
+
+.dd-element {
+  font-size: 18px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 26px 20px;
+  cursor: pointer;
+  color: #5b5b73;
+
+  display: flex; /* Activar flexbox */
+  flex-direction: column; /* Organiza el contenido en columna (vertical) */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto dentro de los elementos */
+}
+
+.dd-element .body {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.button-plantilla {
+  background-color: #ff4444; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Relleno alrededor del texto */
+  font-size: 1rem; /* Tamaño de la fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Manita cuando se pasa sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave en el cambio de color */
+
+  /* Centrado horizontal dentro del contenedor padre */
+  display: block; /* Para que el botón se comporte como un bloque */
+  margin: 0 auto; /* Centramos horizontalmente */
+  align-self: center; /* Si el contenedor es un flex container, centra verticalmente */
+}
+
+.button-plantilla:hover {
+  background-color: #ff2222; /* Color al pasar el mouse */
 }

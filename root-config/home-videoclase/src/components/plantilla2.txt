@@ -1,0 +1,24 @@
+      <div className='drag-and-drop'>
+        {/* Columna de Estilos Predeterminados */}
+        <div className='column column--1'>
+          <h3>Estilos Predeterminados</h3>
+          <div
+            className='dd-zone'
+            droppable="true"
+            onDragOver={(evt) => draggingOver(evt)}
+            onDrop={(evt) => onDropDuplicate(evt, 1)}  // Duplicar tarea
+          >
+            {getList(1).map(item => (
+              <div className='dd-element' key={item.id} draggable onDragStart={(evt) => startDrag(evt, item)}>
+                <strong className='title'>
+                  <input
+                    type="text"
+                    value={item.title}
+                    onChange={(e) => handleTitleChange(item.id, e.target.value)}
+                  />
+                </strong>
+                <p className='body'>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
