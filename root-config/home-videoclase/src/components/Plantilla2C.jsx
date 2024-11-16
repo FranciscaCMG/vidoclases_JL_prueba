@@ -86,46 +86,10 @@ export default function Plantilla2C() {
 
   return (
     <div>
-      <div className="centrado">
-        <Link className="h1-home-presentacion" to="/HomeVC">
-          PRESENTACIONES
-        </Link>
-      </div>
-      <br />
-
       <div className="drag-and-drop">
-        {/* Columna de Estilos Predeterminados */}
-        <div className="column column--1">
-          <h3>Estilos Predeterminados</h3>
-          <div
-            className="dd-zone"
-            droppable="true"
-            onDragOver={(evt) => draggingOver(evt)}
-            onDrop={(evt) => onDropDuplicate(evt, 1)} // Duplicar tarea
-          >
-            {getList(1).map((item) => (
-              <div
-                className="dd-element"
-                key={item.id}
-                draggable
-                onDragStart={(evt) => startDrag(evt, item)}
-              >
-                <strong className="title">
-                  <input
-                    type="text"
-                    value={item.title}
-                    onChange={(e) => handleTitleChange(item.id, e.target.value)}
-                  />
-                </strong>
-                <p className="body">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Columna 2 y 3 - Presentación Actual */}
         <div className="column2 column--2">
-          <h3>Presentación Actual</h3>
+          <h3>Presentación 2 Columnas</h3>
 
           <div className="columns-container">
             {/* Columna 2 */}
